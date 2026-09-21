@@ -1,14 +1,7 @@
-listaNum = input(print("Escribe un lista números separados por espacios."))
+listaNum = list(map(int, input("Escribe un lista números separados por espacios.").split(" ")))
 
-arrayPares, arrayImpares = array('i')
-cPares, cImpares = 0
-arrayNum = listaNum.split(" ")
+pares = [n for n in listaNum if n%2==0]
+impares = [n for n in listaNum if n%2!=0]
 
-for num in arrayNum:
-    if num % 2 == 0:
-        arrayPares[cPares] = num
-        cPares + 1
-    else:
-        arrayImpares[cImpares] = num
-        cImpares + 1
-        
+print(f"Pares: {pares}")
+print(f"Impares: {impares}")
